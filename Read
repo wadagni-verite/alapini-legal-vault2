@@ -1,0 +1,133 @@
+     1	<!DOCTYPE html>
+     2	<html lang="fr">
+     3	<head>
+     4	    <meta charset="UTF-8">
+     5	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6	    <title>ALAPINI Legal Digital Vault - Accès Sécurisé</title>
+     7	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     8	    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+     9	    <link rel="stylesheet" href="css/style.css">
+    10	</head>
+    11	<body class="login-page">
+    12	    <!-- Background Pattern -->
+    13	    <div class="login-background"></div>
+    14	    
+    15	    <!-- Login Container -->
+    16	    <div class="login-container">
+    17	        <div class="login-card">
+    18	            <!-- Logo & Header -->
+    19	            <div class="login-header">
+    20	                <div class="logo-circle">
+    21	                    <i class="fas fa-scale-balanced"></i>
+    22	                </div>
+    23	                <h1 class="login-title">ALAPINI Legal Digital Vault</h1>
+    24	                <p class="login-subtitle">Plateforme Sécurisée de Gestion Documentaire</p>
+    25	                <div class="case-reference">
+    26	                    <span class="case-badge">Dossier N° ALAPINI-VINCI-2026</span>
+    27	                </div>
+    28	            </div>
+    29	
+    30	            <!-- Login Form -->
+    31	            <form id="loginForm" class="login-form">
+    32	                <div class="form-group">
+    33	                    <label for="userRole">
+    34	                        <i class="fas fa-user-tag"></i>
+    35	                        Profil d'accès
+    36	                    </label>
+    37	                    <select id="userRole" required>
+    38	                        <option value="">Sélectionnez votre profil...</option>
+    39	                        <option value="expert">🎯 Expert Négociateur</option>
+    40	                        <option value="cliente">👩‍💼 Mme ALAPINI (Cliente)</option>
+    41	                        <option value="avocat">⚖️ Avocat Conseil</option>
+    42	                        <option value="conseil">📊 Expert Technique</option>
+    43	                        <option value="observateur">👁️ Observateur Autorisé</option>
+    44	                    </select>
+    45	                </div>
+    46	
+    47	                <div class="form-group">
+    48	                    <label for="accessCode">
+    49	                        <i class="fas fa-key"></i>
+    50	                        Code d'accès sécurisé
+    51	                    </label>
+    52	                    <input 
+    53	                        type="password" 
+    54	                        id="accessCode" 
+    55	                        placeholder="Entrez votre code d'accès"
+    56	                        required
+    57	                        autocomplete="off">
+    58	                    <div class="password-hint">
+    59	                        <i class="fas fa-info-circle"></i>
+    60	                        Code fourni par l'expert négociateur
+    61	                    </div>
+    62	                </div>
+    63	
+    64	                <button type="submit" class="btn-login">
+    65	                    <i class="fas fa-lock-open"></i>
+    66	                    Accéder au Coffre-fort Numérique
+    67	                </button>
+    68	            </form>
+    69	
+    70	            <!-- Security Info -->
+    71	            <div class="security-info">
+    72	                <div class="security-item">
+    73	                    <i class="fas fa-shield-halved"></i>
+    74	                    <span>Chiffrement SSL/TLS</span>
+    75	                </div>
+    76	                <div class="security-item">
+    77	                    <i class="fas fa-fingerprint"></i>
+    78	                    <span>Traçabilité complète</span>
+    79	                </div>
+    80	                <div class="security-item">
+    81	                    <i class="fas fa-clock"></i>
+    82	                    <span>Horodatage certifié</span>
+    83	                </div>
+    84	            </div>
+    85	
+    86	            <!-- Footer -->
+    87	            <div class="login-footer">
+    88	                <p><i class="fas fa-copyright"></i> 2026 Gilles Sixte FELIHO - Expert en Techniques de Négociation</p>
+    89	                <p class="confidential-notice">
+    90	                    <i class="fas fa-lock"></i> STRICTEMENT CONFIDENTIEL
+    91	                </p>
+    92	            </div>
+    93	        </div>
+    94	
+    95	        <!-- Side Info Panel -->
+    96	        <div class="info-panel">
+    97	            <div class="info-card">
+    98	                <h3><i class="fas fa-gavel"></i> Contexte du Dossier</h3>
+    99	                <div class="info-item">
+   100	                    <strong>Objet :</strong>
+   101	                    <p>Réparation intégrale d'un sinistre industriel et humain global</p>
+   102	                </div>
+   103	                <div class="info-item">
+   104	                    <strong>Montant :</strong>
+   105	                    <p class="amount-highlight">≈ 4 000 000 EUR</p>
+   106	                </div>
+   107	                <div class="info-item">
+   108	                    <strong>Parties :</strong>
+   109	                    <p>Mme Doris ALAPINI vs VINCI CONSTRUCTION SOGEA SATOM</p>
+   110	                </div>
+   111	                <div class="info-item">
+   112	                    <strong>Juridiction :</strong>
+   113	                    <p>Bénin / France (Négociation Internationale)</p>
+   114	                </div>
+   115	            </div>
+   116	
+   117	            <div class="info-card features-card">
+   118	                <h3><i class="fas fa-star"></i> Fonctionnalités</h3>
+   119	                <ul class="features-list">
+   120	                    <li><i class="fas fa-folder-tree"></i> 15 catégories documentaires structurées</li>
+   121	                    <li><i class="fas fa-upload"></i> Upload sécurisé de pièces justificatives</li>
+   122	                    <li><i class="fas fa-chart-line"></i> Tableaux de bord analytiques</li>
+   123	                    <li><i class="fas fa-timeline"></i> Chronologie interactive</li>
+   124	                    <li><i class="fas fa-certificate"></i> Certificats d'antériorité</li>
+   125	                    <li><i class="fas fa-users"></i> Accès multi-utilisateurs</li>
+   126	                </ul>
+   127	            </div>
+   128	        </div>
+   129	    </div>
+   130	
+   131	    <script src="js/auth.js"></script>
+   132	</body>
+   133	</html>
