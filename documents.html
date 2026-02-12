@@ -1,0 +1,101 @@
+iv class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Rechercher un document...">
+                </div>
+                <button class="btn-icon" title="Filtres" id="btnFilters">
+                    <i class="fas fa-filter"></i>
+                </button>
+                <a href="upload.html" class="btn-primary-sm">
+                    <i class="fas fa-plus"></i>
+                    Nouveau Document
+                </a>
+            </div>
+        </header>
+
+        <!-- Filters Bar -->
+        <div class="filters-bar" id="filtersBar">
+            <div class="filter-group">
+                <label><i class="fas fa-folder"></i> Catégorie</label>
+                <select id="filterCategory">
+                    <option value="">Toutes les catégories</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label><i class="fas fa-flag"></i> Statut</label>
+                <select id="filterStatus">
+                    <option value="">Tous les statuts</option>
+                    <option value="En attente">En attente</option>
+                    <option value="Validé">Validé</option>
+                    <option value="À compléter">À compléter</option>
+                    <option value="Archivé">Archivé</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label><i class="fas fa-sort"></i> Trier par</label>
+                <select id="sortBy">
+                    <option value="date-desc">Plus récent</option>
+                    <option value="date-asc">Plus ancien</option>
+                    <option value="title-asc">Titre (A-Z)</option>
+                    <option value="title-desc">Titre (Z-A)</option>
+                </select>
+            </div>
+            <button class="btn-reset" id="btnResetFilters">
+                <i class="fas fa-times"></i>
+                Réinitialiser
+            </button>
+        </div>
+
+        <!-- Documents Grid -->
+        <div class="documents-container">
+            <div class="documents-header">
+                <div class="documents-count">
+                    <span id="documentsCount">0 document</span>
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="grid" title="Vue grille">
+                        <i class="fas fa-grip"></i>
+                    </button>
+                    <button class="view-btn" data-view="list" title="Vue liste">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="documentsGrid" class="documents-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <i class="fas fa-folder-open"></i>
+                <h3>Aucun document trouvé</h3>
+                <p>Commencez par uploader votre premier document</p>
+                <a href="upload.html" class="btn-primary">
+                    <i class="fas fa-upload"></i>
+                    Uploader un Document
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Document Detail Modal -->
+    <div id="documentModal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2 id="modalTitle">Détails du Document</h2>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/documents.js"></script>
+</body>
+</html>
