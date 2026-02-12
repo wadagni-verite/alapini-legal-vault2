@@ -1,0 +1,165 @@
+
+        </header>
+
+        <!-- Case Info Banner -->
+        <div class="case-banner">
+            <div class="case-info">
+                <div class="case-icon">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <div class="case-details">
+                    <h2>DOSSIER ALAPINI vs VINCI CONSTRUCTION</h2>
+                    <p>REF: ALAPINI-VINCI-2026 | Réparation Sinistre Industriel</p>
+                    <div class="case-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Cotonou, Bénin → Paris, France</span>
+                        <span><i class="fas fa-euro-sign"></i> Montant: 4 000 000 €</span>
+                        <span><i class="fas fa-calendar"></i> Phase: Négociation Amiable</span>
+                    </div>
+                </div>
+            </div>
+            <div class="case-status">
+                <div class="status-badge status-active">
+                    <i class="fas fa-circle-notch fa-spin"></i>
+                    En cours
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card stat-primary">
+                <div class="stat-icon">
+                    <i class="fas fa-folder"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="totalDocs">0</h3>
+                    <p>Documents Totaux</p>
+                    <div class="stat-trend">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+12 cette semaine</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-card stat-success">
+                <div class="stat-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="validatedDocs">0</h3>
+                    <p>Documents Validés</p>
+                    <div class="stat-trend">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+8 ce mois</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-card stat-warning">
+                <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="pendingDocs">0</h3>
+                    <p>En Attente</p>
+                    <div class="stat-trend">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>-3 cette semaine</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-card stat-info">
+                <div class="stat-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>15</h3>
+                    <p>Catégories</p>
+                    <div class="stat-trend">
+                        <i class="fas fa-check"></i>
+                        <span>Complète</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="charts-row">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3><i class="fas fa-chart-pie"></i> Répartition par Catégorie</h3>
+                    <button class="btn-icon-sm">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3><i class="fas fa-chart-line"></i> Évolution des Dépôts</h3>
+                    <button class="btn-icon-sm">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="timelineChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Overview -->
+        <div class="section-card">
+            <div class="section-header">
+                <h3><i class="fas fa-folder-tree"></i> Vue d'ensemble des Catégories</h3>
+                <a href="documents.html" class="btn-link">Voir tous les documents <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="section-card">
+            <div class="section-header">
+                <h3><i class="fas fa-history"></i> Activité Récente</h3>
+                <a href="activites.html" class="btn-link">Voir tout <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="activity-list" id="recentActivity">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <h3><i class="fas fa-bolt"></i> Actions Rapides</h3>
+            <div class="actions-grid">
+                <a href="upload.html" class="action-btn action-primary">
+                    <i class="fas fa-upload"></i>
+                    <span>Uploader un Document</span>
+                </a>
+                <a href="certificats.html" class="action-btn action-success">
+                    <i class="fas fa-certificate"></i>
+                    <span>Générer un Certificat</span>
+                </a>
+                <a href="chronologie.html" class="action-btn action-info">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Ajouter un Événement</span>
+                </a>
+                <button class="action-btn action-warning" id="btnExportAll">
+                    <i class="fas fa-file-export"></i>
+                    <span>Exporter le Dossier</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
