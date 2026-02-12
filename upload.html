@@ -1,0 +1,227 @@
+s-list {
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .features-list h3 {
+            color: #1e3a8a;
+            margin: 0 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .features-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .features-list li {
+            padding: 0.5rem 0;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .features-list li i {
+            color: #10b981;
+            font-size: 1.1rem;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: #1e3a8a;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #374151;
+        }
+        
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+        
+        .timeline {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e5e7eb;
+        }
+        
+        .timeline h4 {
+            color: #1e3a8a;
+            margin: 0 0 1rem 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            background: #f9fafb;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #dbeafe;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .timeline-content strong {
+            color: #1e3a8a;
+            display: block;
+        }
+        
+        .timeline-content span {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="construction-container">
+        <div class="construction-box">
+            <div class="construction-icon">
+                <i class="fas fa-hard-hat"></i>
+            </div>
+            
+            <h1>Page en Construction</h1>
+            
+            <p>
+                Cette fonctionnalité est actuellement en développement et sera disponible prochainement. 
+                La plateforme est opérationnelle à <strong>85%</strong> et vous pouvez déjà utiliser les pages principales.
+            </p>
+            
+            <div class="features-list">
+                <h3><i class="fas fa-check-circle"></i> Pages Disponibles</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <strong>Dashboard</strong> - Statistiques et graphiques en temps réel
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <strong>Documents</strong> - Gestion complète avec filtres et recherche
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <strong>Authentification</strong> - 7 profils utilisateurs sécurisés
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="btn-group">
+                <a href="dashboard.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i>
+                    Retour au Dashboard
+                </a>
+                <a href="documents.html" class="btn btn-secondary">
+                    <i class="fas fa-folder"></i>
+                    Voir les Documents
+                </a>
+            </div>
+            
+            <div class="timeline">
+                <h4>🚀 Prochaines Fonctionnalités</h4>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <strong>Upload de Documents</strong>
+                        <span>Drag & drop avec calcul hash SHA-256</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-timeline"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <strong>Chronologie Interactive</strong>
+                        <span>Timeline visuelle des événements du dossier</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <strong>Générateur de Certificats</strong>
+                        <span>Preuves d'antériorité avec QR code</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <strong>Gestion Collaborateurs</strong>
+                        <span>CRUD utilisateurs et permissions</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <strong>Logs d'Activité</strong>
+                        <span>Historique complet avec filtres avancés</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 0.95rem; color: #9ca3af;">
+                <i class="fas fa-info-circle"></i>
+                Pour contribuer au développement de cette page, consultez 
+                <a href="README.md" style="color: #1e3a8a; text-decoration: underline;">la documentation</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
