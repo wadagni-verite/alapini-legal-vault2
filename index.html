@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ALAPINI Legal Digital Vault - Plateforme sécurisée de gestion documentaire juridique">
+    <title>ALAPINI Legal Digital Vault | Authentification</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+    <!-- Animated Background -->
+    <div class="auth-background">
+        <div class="geometric-pattern"></div>
+    </div>
+
+    <!-- Authentication Container -->
+    <div class="auth-container">
+        <div class="auth-box">
+            <!-- Logo & Header -->
+            <div class="auth-header">
+                <div class="logo-container">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <h1>ALAPINI Legal Vault</h1>
+                <p class="subtitle">Plateforme Sécurisée de Gestion Documentaire</p>
+                <div class="case-reference">
+                    <span class="badge">DOSSIER N° ALAPINI-VINCI-2026</span>
+                </div>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="userRole">
+                        <i class="fas fa-user-tag"></i>
+                        Profil d'accès
+                    </label>
+                    <select id="userRole" required>
+                        <option value="">Sélectionnez votre profil...</option>
+                        <option value="expert">🎯 Expert en Négociation</option>
+                        <option value="cliente">👩‍💼 Cliente (Mme ALAPINI)</option>
+                        <option value="avocat">⚖️ Avocat Conseil</option>
+                        <option value="consultant">📊 Consultant / Expert</option>
+                        <option value="vinci">🏢 Partie Adverse (VINCI)</option>
+                        <option value="observateur">👁️ Observateur</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="accessCode">
+                        <i class="fas fa-key"></i>
+                        Code d'accès sécurisé
+                    </label>
+                    <input 
+                        type="password" 
+                        id="accessCode" 
+                        placeholder="Entrez votre code d'accès" 
+                        required
+                        autocomplete="off"
+                    >
+                    <div class="password-hint">
+                        <i class="fas fa-info-circle"></i>
+                        Code fourni par l'administrateur du dossier
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-unlock"></i>
+                    Accéder au Coffre-fort
+                </button>
+
+                <div class="auth-footer">
+                    <p>
+                        <i class="fas fa-lock"></i>
+                        Connexion sécurisée SSL/TLS | Horodatage blockchain
+                    </p>
+                    <p class="copyright">
+                        © 2026 Digital War Room | Expert: Gilles Sixte FELIHO
+                    </p>
+                </div>
+            </form>
+
+            <!-- Security Features -->
+            <div class="security-badges">
+                <div class="badge-item">
+                    <i class="fas fa-fingerprint"></i>
+                    <span>Traçabilité</span>
+                </div>
+                <div class="badge-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Horodatage</span>
+                </div>
+                <div class="badge-item">
+                    <i class="fas fa-shield-check"></i>
+                    <span>SHA-256</span>
+                </div>
+                <div class="badge-item">
+                    <i class="fas fa-database"></i>
+                    <span>Backup Auto</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Panel -->
+        <div class="info-panel">
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <h3>Contexte du Dossier</h3>
+                <ul>
+                    <li><strong>Affaire:</strong> Réparation Sinistre Industriel</li>
+                    <li><strong>Demande:</strong> ~4 000 000 €</li>
+                    <li><strong>Lieu:</strong> Cotonou, Bénin 🇧🇯</li>
+                    <li><strong>Juridiction:</strong> France 🇫🇷</li>
+                    <li><strong>Phase:</strong> Négociation Amiable</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-folder-tree"></i>
+                </div>
+                <h3>Architecture Documentaire</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> 15 catégories structurées</li>
+                    <li><i class="fas fa-check-circle"></i> Système de versioning</li>
+                    <li><i class="fas fa-check-circle"></i> Recherche avancée</li>
+                    <li><i class="fas fa-check-circle"></i> Export multi-format</li>
+                    <li><i class="fas fa-check-circle"></i> Collaboration temps réel</li>
+                </ul>
+            </div>
+
+            <div class="info-card highlight">
+                <div class="info-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>Preuve d'Antériorité</h3>
+                <p>Chaque document est horodaté et hashé (SHA-256) pour garantir son intégrité et prouver sa date de dépôt. Certificats exportables pour usage juridique.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/auth.js"></script>
+</body>
+</html>
