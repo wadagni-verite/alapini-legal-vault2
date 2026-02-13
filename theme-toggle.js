@@ -1,40 +1,70 @@
-// ============================================
-// THEME TOGGLE - Dark Mode / Light Mode
-// ============================================
+// ALAPINI Legal Vault - Theme Toggle
+// Version simplifiée et robuste
 
 (function() {
     'use strict';
-
-    document.addEventListener('DOMContentLoaded', initTheme);
+    
+    // Attendre que le DOM soit complètement chargé
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTheme);
+    } else {
+        initTheme();
+    }
 
     function initTheme() {
-        const savedTheme = localStorage.getItem('alapini_theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+        console.log('🎨 Theme Toggle: Initialisation...');
         
-        applyTheme(theme);
-        createThemeToggle();
+        // Récupérer le thème sauvegardé
+        const savedTheme = localStorage.getItem('alapini_theme') || 'light';
+        console.log('📝 Thème sauvegardé:', savedTheme);
         
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!localStorage.getItem('alapini_theme')) {
-                applyTheme(e.matches ? 'dark' : 'light');
-            }
-        });
+        // Appliquer le thème
+        applyTheme(savedTheme);
+        
+        // Créer le bouton toggle
+        setTimeout(createThemeToggle, 100);
     }
 
     function createThemeToggle() {
-        if (document.querySelector('.theme-toggle')) return;
+        // Vérifier si le toggle existe déjà
+        if (document.querySelector('.theme-toggle')) {
+            console.log('✅ Toggle déjà créé');
+            return;
+        }
+        
+        console.log('🔨 Création du bouton toggle...');
         
         const toggle = document.createElement('button');
         toggle.className = 'theme-toggle';
-        toggle.setAttribute('aria-label', 'Toggle dark mode');
+        toggle.setAttribute('aria-label', 'Basculer le mode sombre');
         toggle.innerHTML = `
-            <i class="fas fa-sun"></i>
-            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun" style="font-size: 1.25rem;"></i>
+            <i class="fas fa-moon" style="font-size: 1.25rem;"></i>
+        `;
+        
+        // Styles inline pour s'assurer qu'il soit visible
+        toggle.style.cssText = `
+            position: fixed !important;
+            top: 1rem !important;
+            right: 1rem !important;
+            z-index: 99999 !important;
+            background: rgba(30, 58, 138, 0.9) !important;
+            border: 2px solid rgba(251, 191, 36, 0.5) !important;
+            border-radius: 50px !important;
+            padding: 0.75rem 1.25rem !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            cursor: pointer !important;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+            transition: all 0.3s ease !important;
         `;
         
         toggle.addEventListener('click', toggleTheme);
         document.body.appendChild(toggle);
+        
+        console.log('✅ Bouton toggle créé !');
+        
         updateToggleState();
     }
 
@@ -42,16 +72,15 @@
         const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
+        console.log(`🔄 Changement de thème: ${currentTheme} → ${newTheme}`);
+        
         applyTheme(newTheme);
         localStorage.setItem('alapini_theme', newTheme);
-        
-        document.body.style.transition = 'background 0.5s ease, color 0.5s ease';
-        setTimeout(() => {
-            document.body.style.transition = '';
-        }, 500);
     }
 
     function applyTheme(theme) {
+        console.log('🎨 Application du thème:', theme);
+        
         if (theme === 'dark') {
             document.body.classList.add('dark-mode');
             document.body.classList.remove('light-mode');
@@ -59,8 +88,8 @@
             document.body.classList.add('light-mode');
             document.body.classList.remove('dark-mode');
         }
+        
         updateToggleState();
-        updateChartTheme(theme);
     }
 
     function updateToggleState() {
@@ -68,67 +97,29 @@
         if (!toggle) return;
         
         const isDark = document.body.classList.contains('dark-mode');
+        const sunIcon = toggle.querySelector('.fa-sun');
+        const moonIcon = toggle.querySelector('.fa-moon');
         
-        if (isDark) {
-            toggle.classList.add('dark-mode');
-            toggle.querySelector('.fa-sun').style.opacity = '0';
-            toggle.querySelector('.fa-moon').style.opacity = '1';
-        } else {
-            toggle.classList.remove('dark-mode');
-            toggle.querySelector('.fa-sun').style.opacity = '1';
-            toggle.querySelector('.fa-moon').style.opacity = '0';
+        if (sunIcon && moonIcon) {
+            if (isDark) {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+                moonIcon.style.color = '#fbbf24';
+            } else {
+                sunIcon.style.display = 'block';
+                sunIcon.style.color = '#fbbf24';
+                moonIcon.style.display = 'none';
+            }
         }
     }
 
-    function updateChartTheme(theme) {
-        if (typeof Chart === 'undefined') return;
-        
-        const isDark = theme === 'dark';
-        const colors = isDark ? {
-            text: '#ffffff',
-            gridLines: 'rgba(255, 255, 255, 0.1)',
-            tooltipBg: 'rgba(21, 25, 50, 0.9)'
-        } : {
-            text: '#1e3a8a',
-            gridLines: 'rgba(30, 58, 138, 0.1)',
-            tooltipBg: 'rgba(255, 255, 255, 0.9)'
-        };
-        
-        if (Chart.defaults) {
-            Chart.defaults.color = colors.text;
-            Chart.defaults.borderColor = colors.gridLines;
-        }
-    }
-
-    window.ThemeManager = {
+    // Exposer pour debug
+    window.ThemeDebug = {
+        init: initTheme,
         toggle: toggleTheme,
-        set: applyTheme,
-        get: () => document.body.classList.contains('dark-mode') ? 'dark' : 'light'
+        create: createThemeToggle
     };
 
 })();
 
-// Styles pour le toggle
-const toggleStyles = document.createElement('style');
-toggleStyles.textContent = `
-    .theme-toggle i {
-        position: absolute;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .theme-toggle .fa-moon {
-        opacity: 0;
-        transform: rotate(-180deg);
-    }
-    
-    .theme-toggle.dark-mode .fa-moon {
-        opacity: 1;
-        transform: rotate(0deg);
-    }
-    
-    .theme-toggle.dark-mode .fa-sun {
-        opacity: 0;
-        transform: rotate(180deg);
-    }
-`;
-document.head.appendChild(toggleStyles);
+console.log('✅ Script theme-toggle.js chargé');
