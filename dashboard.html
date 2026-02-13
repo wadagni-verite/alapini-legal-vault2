@@ -1,4 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | ALAPINI Legal Digital Vault</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/theme-dark.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-shield-halved"></i>
+                <span>ALAPINI Legal Vault</span>
+            </div>
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
 
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item active">
+                <i class="fas fa-th-large"></i>
+                <span>Tableau de Bord</span>
+            </a>
+            <a href="documents.html" class="nav-item">
+                <i class="fas fa-folder-open"></i>
+                <span>Documents</span>
+            </a>
+            <a href="upload.html" class="nav-item">
+                <i class="fas fa-upload"></i>
+                <span>Upload</span>
+            </a>
+            <a href="chronologie.html" class="nav-item">
+                <i class="fas fa-timeline"></i>
+                <span>Chronologie</span>
+            </a>
+            <a href="certificats.html" class="nav-item">
+                <i class="fas fa-certificate"></i>
+                <span>Certificats</span>
+            </a>
+            <a href="collaborateurs.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Collaborateurs</span>
+            </a>
+            <a href="activites.html" class="nav-item">
+                <i class="fas fa-history"></i>
+                <span>Journal d'Activités</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="btn-logout" id="btnLogout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Déconnexion</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Rechercher un document, un événement...">
+            </div>
+
+            <div class="header-actions">
+                <button class="btn-icon" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge-count">3</span>
+                </button>
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name" id="userName">Expert Négociateur</span>
+                        <span class="user-role" id="userRole">Administrateur</span>
+                    </div>
+                </div>
+            </div>
         </header>
 
         <!-- Case Info Banner -->
@@ -158,6 +258,7 @@
     </main>
 
     <!-- Scripts -->
+    <script src="js/theme-toggle.js"></script>
     <script src="js/config.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/dashboard.js"></script>
